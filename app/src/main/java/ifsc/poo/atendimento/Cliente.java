@@ -33,6 +33,12 @@ public class Cliente {
         this.solicitacaos = solicitacaos;
     }
 
+
+    public void addSolicitacao(Solicitacao solicitacao){
+        this.solicitacaos.add(solicitacao);
+        solicitacao.setCliente(this);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -50,6 +56,7 @@ public class Cliente {
         return "Cliente{" +
                 "nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +
+                ", solicitacaos=" + solicitacaos +
                 '}';
     }
 }

@@ -13,4 +13,15 @@ public class RegistroFila {
     public void setSolicitacaoQueue(Queue<Solicitacao> solicitacaoQueue) {
         this.solicitacaoQueue = solicitacaoQueue;
     }
+
+    public void addFila(Solicitacao solicitacao){
+        this.solicitacaoQueue.add(solicitacao);
+    }
+
+    @Override
+    public String toString() {
+        return "RegistroFila{" +
+                "solicitacaoQueue=" + solicitacaoQueue +
+                '}';
+    }
 }

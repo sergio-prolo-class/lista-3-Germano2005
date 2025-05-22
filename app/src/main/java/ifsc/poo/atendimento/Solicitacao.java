@@ -1,8 +1,10 @@
 package ifsc.poo.atendimento;
 
+import java.util.Arrays;
+
 public class Solicitacao {
     private String descricao;
-    private final String[] categoria = {"Suporte Técnico", "Informação", "Atendimento Finaceiro"};
+    private ECategoria categoria;
     private Cliente cliente;
 
     public String getDescricao() {
@@ -17,16 +19,24 @@ public class Solicitacao {
         return cliente;
     }
 
+    public ECategoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(ECategoria categoria) {
+        this.categoria = categoria;
+    }
+
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public String getCategoria(int i){
-        for (int j = 0; j < 3; j++){
-            if (categoria[j].equals(categoria[i])){
-                return categoria[j];
-            }
-        }
-        return null;
+    @Override
+    public String toString() {
+        return "Solicitacao{" +
+                "descricao='" + descricao + '\'' +
+                ", categoria=" + categoria.getDecricao() +
+                ", cliente=" + cliente +
+                '}';
     }
 }
