@@ -47,4 +47,18 @@ public class Leitor {
         emprestimo.setLeitor(this);
         emprestimo.getLivro().decrementCopias();
     }
+
+    public String dadosLeitor(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Nome: ").append(this.getNome()).append("\n");
+        builder.append("Endereco: ").append(this.getEndereco()).append("\n");
+        builder.append("Telefone: ").append(this.getTelefone()).append("\n");
+
+        builder.append("Empréstimos").append("\n");
+        for (Emprestimo e : emprestimos){
+            builder.append(e.dadosEmprestimo()).append("\n");
+        }
+
+        return builder.toString();
+    }
 }

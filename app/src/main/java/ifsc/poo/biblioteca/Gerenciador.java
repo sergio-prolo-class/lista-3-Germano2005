@@ -32,15 +32,16 @@ public class Gerenciador {
         this.leitores = leitores;
     }
 
-    public void cadastraAutor(Autor autor){
+    /*public String cadastraAutor(Autor autor){
+
 
     }
 
-    public void cadastraLivro(Livro livro){
+    public String cadastraLivro(Livro livro){
 
     }
 
-    public void cadastraAutor(Leitor leitor){
-
-    }
+    public String cadastraLeitor(Leitor leitor){
+        leitor.setId(1);
+    }*/
 }

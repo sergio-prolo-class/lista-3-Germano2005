@@ -25,22 +25,22 @@ public class AppBiblioteca {
         Livro livro1 = new Livro();
         livro1.setTitulo("O Pequeno Principe");
         livro1.setIsbn("9780152048044");
-        livro1.setQtdCopias(6);
+        livro1.setCopias(6);
 
         Livro livro2 = new Livro();
         livro2.setTitulo("O Corvo");
         livro2.setIsbn("9780963113535");
-        livro2.setQtdCopias(7);
+        livro2.setCopias(7);
 
         Livro livro3 = new Livro();
         livro3.setTitulo("O Gato Preto");
         livro3.setIsbn("9780582417748");
-        livro3.setQtdCopias(3);
+        livro3.setCopias(3);
 
         Livro livro4 = new Livro();
         livro4.setTitulo("Em busca de nós mesmos");
         livro4.setIsbn("9780152048044");
-        livro4.setQtdCopias(5);
+        livro4.setCopias(5);
 
         //Instanciando Leitores
         Leitor leitor1 = new Leitor();
@@ -57,6 +57,8 @@ public class AppBiblioteca {
         leitor3.setNome("Sergio Florentino");
         leitor3.setEndereco("Florianópolis");
         leitor3.setTelefone("489999997");
+
+
 
         //Ligação entre autor e livro
         AutorLivro autorLivro1 = new AutorLivro();
@@ -79,6 +81,16 @@ public class AppBiblioteca {
 
         autor3.addLivros(autorLivro4);
         autor4.addLivros(autorLivro4);
+
+        System.out.println("\n");
+
+        //Autores e Livros
+        System.out.println(autor1.dadosAutor());
+        System.out.println(autor2.dadosAutor());
+        System.out.println(autor3.dadosAutor());
+        System.out.println(autor4.dadosAutor());
+
+        System.out.println("\n");
 
         //Emprestimos
         Emprestimo emprestimo1 = new Emprestimo();
@@ -112,13 +124,16 @@ public class AppBiblioteca {
         //Associando os empréstimos aos leitores
         leitor1.emprestimo(emprestimo1);
         leitor1.emprestimo(emprestimo3);
+        System.out.println(leitor1.dadosLeitor());
 
         leitor2.emprestimo(emprestimo2);
         leitor2.emprestimo(emprestimo4);
         leitor2.emprestimo(emprestimo6);
+        System.out.println(leitor2.dadosLeitor());
 
         leitor3.emprestimo(emprestimo5);
         leitor3.emprestimo(emprestimo7);
+        System.out.println(leitor3.dadosLeitor());
 
 
 

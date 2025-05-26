@@ -1,9 +1,13 @@
 package ifsc.poo.biblioteca;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Livro {
     private String titulo;
     private String isbn;
-    private int qtdCopias;
+    private int copias;
+    private List<AutorLivro> autorLivroList = new ArrayList<>();
 
     public String getTitulo() {
         return titulo;
@@ -21,15 +25,32 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public int getQtdCopias() {
-        return qtdCopias;
+    public int getCopias() {
+        return copias;
     }
 
-    public void setQtdCopias(int qtdCopias) {
-        this.qtdCopias = qtdCopias;
+    public void setCopias(int copias) {
+        this.copias = copias;
     }
 
     public void decrementCopias(){
-        this.qtdCopias--;
+        this.copias--;
+    }
+
+    public List<AutorLivro> getAutorLivroList() {
+        return autorLivroList;
+    }
+
+    public void setAutorLivroList(List<AutorLivro> autorLivroList) {
+        this.autorLivroList = autorLivroList;
+    }
+
+    public String dadosLivro(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Título: ").append(this.getTitulo()).append("\n");
+        builder.append("ISBN: ").append(this.getIsbn()).append("\n");
+        builder.append("Cópias: ").append(this.getCopias()).append("\n");
+
+        return builder.toString();
     }
 }

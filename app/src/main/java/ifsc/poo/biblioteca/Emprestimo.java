@@ -30,4 +30,12 @@ public class Emprestimo {
     public void setLeitor(Leitor leitor) {
         this.leitor = leitor;
     }
+
+    public String dadosEmprestimo(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Data de Empréstimo: ").append(this.getDataEmprestimo()).append("\n");
+        builder.append("Livro ").append(this.getLivro().dadosLivro()).append("\n");
+
+        return builder.toString();
+    }
 }

@@ -36,4 +36,17 @@ public class Autor {
         this.autorLivros.add(autorLivro);
         autorLivro.setAutor(this);
     }
+
+    public String dadosAutor(){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Nome: ").append(this.getNome()).append("\n");
+        builder.append("Idioma: ").append(this.getIdioma()).append("\n");
+
+        builder.append("Livros").append("\n");
+        for (AutorLivro al : autorLivros){
+            builder.append(al.getLivro().dadosLivro()).append("\n");
+        }
+
+        return builder.toString();
+    }
 }
