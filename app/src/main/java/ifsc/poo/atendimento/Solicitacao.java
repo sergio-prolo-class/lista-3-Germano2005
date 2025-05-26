@@ -1,6 +1,5 @@
 package ifsc.poo.atendimento;
 
-import java.util.Arrays;
 
 public class Solicitacao {
     private String descricao;
@@ -31,12 +30,5 @@ public class Solicitacao {
         this.cliente = cliente;
     }
 
-    @Override
-    public String toString() {
-        return "Solicitacao{" +
-                "descricao='" + descricao + '\'' +
-                ", categoria=" + categoria.getDecricao() +
-                ", cliente=" + cliente +
-                '}';
-    }
+
 }

@@ -2,62 +2,66 @@ package ifsc.poo.atendimento;
 
 public class AppAtendimento {
     public static void main(String[] args) {
-        // Instanciando a classe cliente
-
+        // Criando clientes
         Cliente cliente1 = new Cliente();
-        Cliente cliente2 = new Cliente();
-        Cliente cliente3 = new Cliente();
-
-        // Instanciando as solicitacoes
-        Solicitacao solicitacao1 = new Solicitacao();
-        Solicitacao solicitacao2 = new Solicitacao();
-        Solicitacao solicitacao3 = new Solicitacao();
-        Solicitacao solicitacao4 = new Solicitacao();
-        Solicitacao solicitacao5 = new Solicitacao();
-
-        //Instanciando a Fila
-        RegistroFila rf = new RegistroFila();
-
         cliente1.setNome("Abel");
         cliente1.setTelefone("99111111");
 
+        Cliente cliente2 = new Cliente();
         cliente2.setNome("Beatriz");
         cliente2.setTelefone("99222222");
 
+        Cliente cliente3 = new Cliente();
         cliente3.setNome("Carlos");
-        cliente3.setTelefone("9933333");
+        cliente3.setTelefone("99333333");
 
-        solicitacao1.setDescricao("Computador quebrado");
-        solicitacao1.setCategoria(ECategoria.TECNICO);
+        // Criando solicitações
+        Solicitacao s1 = new Solicitacao();
+        s1.setDescricao("Computador não liga");
+        s1.setCategoria(ECategoria.TECNICO);
+        cliente1.addSolicitacao(s1);
 
-        solicitacao2.setDescricao("Conta bancário zerada");
-        solicitacao2.setCategoria(ECategoria.FINANCEIRO);
+        Solicitacao s2 = new Solicitacao();
+        s2.setDescricao("Problema com pagamento");
+        s2.setCategoria(ECategoria.FINANCEIRO);
+        cliente2.addSolicitacao(s2);
 
-        solicitacao3.setDescricao("Impressora não funciona");
-        solicitacao3.setCategoria(ECategoria.TECNICO);
+        Solicitacao s3 = new Solicitacao();
+        s3.setDescricao("Dúvida sobre horários");
+        s3.setCategoria(ECategoria.INFORMACAO);
+        cliente3.addSolicitacao(s3);
 
-        solicitacao4.setDescricao("Informação de pesquisa");
-        solicitacao4.setCategoria(ECategoria.INFORMACAO);
+        Solicitacao s4 = new Solicitacao();
+        s4.setDescricao("Impressora com problema");
+        s4.setCategoria(ECategoria.TECNICO);
+        cliente1.addSolicitacao(s4);
 
-        solicitacao5.setDescricao("Imprimir extrato do credor");
-        solicitacao5.setCategoria(ECategoria.FINANCEIRO);
+        //Registrando na Fila
+        RegistroFila registro = new RegistroFila();
+        registro.addSolicitacao(s1);
+        registro.addSolicitacao(s2);
+        registro.addSolicitacao(s3);
+        registro.addSolicitacao(s4);
 
-        cliente1.addSolicitacao(solicitacao1);
-        cliente1.addSolicitacao(solicitacao5);
+        //Mostra o próximo cliente
+        System.out.println(registro.proximoCliente());
+        //Atende os clientes
+        System.out.println(registro.atenderCliente());
+        System.out.println(registro.atenderCliente());
 
-        cliente2.addSolicitacao(solicitacao2);
-        cliente2.addSolicitacao(solicitacao3);
+        System.out.println(registro.atenderCliente());
+        //Lista todos os telefones
+        System.out.println(registro.listaTelefones());
 
-        cliente3.addSolicitacao(solicitacao4);
+        //Mostra todos os clienetes atendidos
+        System.out.println(registro.clientesAtendidos());
 
-        rf.addFila(solicitacao1);
-        rf.addFila(solicitacao2);
-        rf.addFila(solicitacao3);
-        rf.addFila(solicitacao4);
-        rf.addFila(solicitacao5);
+        // Gerando relatórios
+        Relatorio relatorio = new Relatorio();
+        relatorio.setRegistroFila(registro);
 
-        System.out.println(rf.toString());
-
+        System.out.println("\nRELATÓRIOS");
+        System.out.println(relatorio.relatorioSolicit());
+        System.out.println(relatorio.percentCategoria());
     }
-
 }

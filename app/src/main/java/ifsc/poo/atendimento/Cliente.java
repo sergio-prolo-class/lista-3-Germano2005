@@ -51,12 +51,5 @@ public class Cliente {
         return Objects.hashCode(telefone);
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", solicitacaos=" + solicitacaos +
-                '}';
-    }
+
 }
