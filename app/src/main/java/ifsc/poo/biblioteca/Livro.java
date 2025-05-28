@@ -1,4 +1,3 @@
-// Livro.java
 package ifsc.poo.biblioteca;
 
 public class Livro {

@@ -1,4 +1,3 @@
-// AutorLivro.java
 package ifsc.poo.biblioteca;
 
 public class AutorLivro {

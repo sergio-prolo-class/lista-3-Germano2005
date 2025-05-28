@@ -1,4 +1,3 @@
-// Autor.java
 package ifsc.poo.biblioteca;
 
 import java.util.ArrayList;

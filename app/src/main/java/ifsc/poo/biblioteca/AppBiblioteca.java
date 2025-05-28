@@ -1,4 +1,3 @@
-// AppBiblioteca.java
 package ifsc.poo.biblioteca;
 
 import java.time.LocalDate;
