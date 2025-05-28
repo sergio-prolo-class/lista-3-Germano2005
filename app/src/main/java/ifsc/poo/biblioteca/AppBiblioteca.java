@@ -54,7 +54,7 @@ public class AppBiblioteca {
         leitor2.setTelefone("489999998");
 
         Leitor leitor3 = new Leitor();
-        leitor3.setNome("Sergio Florentino");
+        leitor3.setNome("Louis Augusto");
         leitor3.setEndereco("Florianópolis");
         leitor3.setTelefone("489999997");
 
@@ -135,7 +135,21 @@ public class AppBiblioteca {
         leitor3.emprestimo(emprestimo7);
         System.out.println(leitor3.dadosLeitor());
 
+        Gerenciador g = new Gerenciador();
+        g.cadastrarAutor(autor1);
+        g.cadastrarAutor(autor2);
+        g.cadastrarAutor(autor3);
+        g.cadastrarAutor(autor4);
 
+        g.cadastrarLeitor(leitor1);
+        g.cadastrarLeitor(leitor2);
+        g.cadastrarLeitor(leitor3);
+
+        //Autores em ordem alfabética
+        System.out.println(g.autoresSort());
+
+        //Leitores em ordem alfabética com id
+        System.out.println(g.leitoresSort());
 
     }
 }

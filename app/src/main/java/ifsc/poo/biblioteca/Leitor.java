@@ -43,6 +43,11 @@ public class Leitor {
     }
 
     public void emprestimo(Emprestimo emprestimo){
+        if (emprestimo.getLivro().getCopias() == 0){
+            StringBuilder builder = new StringBuilder();
+            builder.append("Esse livro não possui mais cópias").append("\n");
+            return;
+        }
         this.emprestimos.add(emprestimo);
         emprestimo.setLeitor(this);
         emprestimo.getLivro().decrementCopias();
