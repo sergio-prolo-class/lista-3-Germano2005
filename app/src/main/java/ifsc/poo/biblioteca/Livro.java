@@ -1,13 +1,17 @@
+// Livro.java
 package ifsc.poo.biblioteca;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Livro {
     private String titulo;
     private String isbn;
     private int copias;
-    private List<AutorLivro> autorLivroList = new ArrayList<>();
+    private AutorLivro autorLivro;
+
+    public Livro(String titulo, String isbn, int copias) {
+        this.titulo = titulo;
+        this.isbn = isbn;
+        this.copias = copias;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -33,24 +37,24 @@ public class Livro {
         this.copias = copias;
     }
 
-    public void decrementCopias(){
-        this.copias--;
+    public AutorLivro getAutorLivro() {
+        return autorLivro;
     }
 
-    public List<AutorLivro> getAutorLivroList() {
-        return autorLivroList;
+    public void setAutorLivro(AutorLivro autorLivro) {
+        this.autorLivro = autorLivro;
     }
 
-    public void setAutorLivroList(List<AutorLivro> autorLivroList) {
-        this.autorLivroList = autorLivroList;
+    public void decrementCopias() {
+        if (copias > 0) {
+            copias--;
+        }
     }
 
-    public String dadosLivro(){
-        StringBuilder builder = new StringBuilder();
-        builder.append("Título: ").append(this.getTitulo()).append("\n");
-        builder.append("ISBN: ").append(this.getIsbn()).append("\n");
-        builder.append("Cópias: ").append(this.getCopias()).append("\n");
-
-        return builder.toString();
+    public String dadosLivro() {
+        return "Título: " + titulo +
+                "\nISBN: " + isbn +
+                "\nCópias disponíveis: " + copias +
+                "\nAutor(es): " + autorLivro.getAutor().getNome();
     }
 }

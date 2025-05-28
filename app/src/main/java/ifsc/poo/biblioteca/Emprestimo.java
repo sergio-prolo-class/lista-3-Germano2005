@@ -1,3 +1,4 @@
+// Emprestimo.java
 package ifsc.poo.biblioteca;
 
 import java.time.LocalDate;
@@ -31,11 +32,9 @@ public class Emprestimo {
         this.leitor = leitor;
     }
 
-    public String dadosEmprestimo(){
-        StringBuilder builder = new StringBuilder();
-        builder.append("Data de Empréstimo: ").append(this.getDataEmprestimo()).append("\n");
-        builder.append("Livro ").append(this.getLivro().dadosLivro()).append("\n");
-
-        return builder.toString();
+    public String dadosEmprestimo() {
+        return "Data: " + dataEmprestimo +
+                "\nLivro: " + livro.getTitulo() +
+                "\nLeitor: " + leitor.getNome();
     }
 }

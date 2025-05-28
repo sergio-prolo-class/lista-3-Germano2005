@@ -1,3 +1,4 @@
+// Leitor.java
 package ifsc.poo.biblioteca;
 
 import java.util.ArrayList;
@@ -42,28 +43,18 @@ public class Leitor {
         this.telefone = telefone;
     }
 
-    public void emprestimo(Emprestimo emprestimo){
-        if (emprestimo.getLivro().getCopias() == 0){
-            StringBuilder builder = new StringBuilder();
-            builder.append("Esse livro não possui mais cópias").append("\n");
-            return;
-        }
-        this.emprestimos.add(emprestimo);
-        emprestimo.setLeitor(this);
-        emprestimo.getLivro().decrementCopias();
+    public List<Emprestimo> getEmprestimos() {
+        return emprestimos;
     }
 
-    public String dadosLeitor(){
-        StringBuilder builder = new StringBuilder();
-        builder.append("Nome: ").append(this.getNome()).append("\n");
-        builder.append("Endereco: ").append(this.getEndereco()).append("\n");
-        builder.append("Telefone: ").append(this.getTelefone()).append("\n");
+    public void emprestimo(Emprestimo emprestimo) {
+        emprestimos.add(emprestimo);
+    }
 
-        builder.append("Empréstimos").append("\n");
-        for (Emprestimo e : emprestimos){
-            builder.append(e.dadosEmprestimo()).append("\n");
-        }
-
-        return builder.toString();
+    public String dadosLeitor() {
+        return "ID: " + id +
+                "\nNome: " + nome +
+                "\nEndereço: " + endereco +
+                "\nTelefone: " + telefone;
     }
 }
