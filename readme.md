@@ -19,7 +19,8 @@ Este exercício consiste em uma aplicação Web onde é necessário fazer o gere
 * Autenticar usuários, verificando se login e senha correspondem a um usuário existente
 
  Diagrama de classe abaixo:
-
+ 
+![diagrama](login.png)
 
  ## Fila de Atendimento
 
@@ -37,9 +38,10 @@ Este exercício consiste em um sistema de atendimento de clientes de uma organiz
   * Distribuição percentual das solicitações por categoria.
 
  Diagrama de classe abaixo:
-
-
  
+![diagrama](atendimento.png)
+
+
  ## Biblioteca de Livros
 
 Este exercício consiste em um sistema de gerenciamento de uma biblioteca, onde faça-se necessário o controle e registro de livros, empréstimos e leitores.
@@ -58,5 +60,6 @@ Este exercício consiste em um sistema de gerenciamento de uma biblioteca, onde 
   * Empréstimos de um leitor específico, por data.
 
  Diagrama de classe abaixo:
- 
+
+ ![diagrama](biblioteca.png)
 
